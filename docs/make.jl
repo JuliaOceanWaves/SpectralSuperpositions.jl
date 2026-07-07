@@ -11,11 +11,13 @@ makedocs(
         assets = String["src/index.css"]
     ),
     modules = [SpectralSuperpositions],
-    pages = ["Home" => "index.md"]    #plugins = [bib],
+    pages = ["Home" => "index.md",
+            "API" => "api.md"]    #plugins = [bib],
 )
 
 deploydocs(
     repo = "github.com/JuliaOceanWaves/SpectralSuperpositions.jl.git",
+    versions = ["stable" => "v^", "v#"],
     devbranch = "main",
     push_preview = true
 )

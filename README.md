@@ -4,26 +4,57 @@
 [![Coverage](https://codecov.io/gh/JuliaOceanWaves/SpectralSuperpositions.jl/branch/main/graph/badge.svg)](https://codecov.io/gh/JuliaOceanWaves/SpectralSuperpositions.jl)
 [![deps](https://platform.juliahub.com/docs/General/SpectralSuperpositions/stable/deps.svg)](https://platform.juliahub.com/ui/Packages/General/SpectralSuperpositions?t=2)
 
-A short, one-sentence description of your package.
+A library of components to use as a foundation for constructing and validating one-dimensional frequency spectra and twodimensional spatial/polar spectra.
 
-A longer description of your package, that briefly describes the capabilities of your
-package. Any references are highly encouraged, especially if the package is building on top
-of another package or extending their functionality.
+A collection of structs and utilities for building other packages that work with spectral representations. 
+It defines the abstract types for both cases and includes a set of helper functions to validate and classify the axes and data, ensure consistency, and validate spectral variables. Examples include [WaveRealizations.jl](https://github.com/JuliaOceanWaves/WaveRealizations.jl) and [WaveSpectra.jl](https://github.com/JuliaOceanWaves/WaveSpectra.jl) which include workflows for spectral modeling and analysis. 
 
 ## Basic Usage
 
-A short example of the capabilities of your package.
+WaveRealizations.jl `ComplexAmplitudes` constructor that uses SpectralSuperpositions.jl abstract type and validation function to ensure consistency. 
 
 ```julia-repl
 using SpectralSuperpositions
 
-greet()
-greet("Julia")
+struct ComplexAmplitudes{
+    TDAT,
+    TAX1 <: AbstractVector,
+    TAX2 <: AbstractVector
+} <: AbstractSuperposition{TDAT}
+    data::Matrix{TDAT}
+    axis1::TAX1
+    axis2::TAX2
+    coordinates::Symbol
+    axestypes::Tuple{Symbol, Symbol}
+    axesnames::Tuple{Symbol, Symbol}
+
+    function ComplexAmplitudes(
+            data::AbstractMatrix,
+            axis1::AbstractVector,
+            axis2::AbstractVector
+    )
+        validated = validate_superposition(data, axis1, axis2)
+
+
+        return new{
+            eltype(validated.data), typeof(validated.axis1), typeof(validated.axis2)}(
+            validated.data,
+            validated.axis1,
+            validated.axis2,
+            validated.coordinates,
+            validated.axestypes,
+            validated.axesnames
+        )
+    end
+end
 ```
 
-### Basic Usage Subsection
+## Development
 
-Any other details about the usage or capabilities of the package such as restrictions.
+```julia
+using Pkg
+Pkg.test("SpectralSuperpositions")
+```
 
 ## Contributing
 
