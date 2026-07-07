@@ -10,3 +10,6 @@ Unitful = "1986cc42-f94f-5a68-af5c-568840ba703d"
 
 [compat]
 julia = "1.10"
+AxisArrays = "0.4"
+DimensionfulAngles = "0.2"
+Unitful = "1"
