@@ -1,0 +1,6 @@
+[deps]
+Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
+RepoTemplate = "853e458c-f57f-4a7c-9434-3617a48582a4"
+
+[compat]
+Documenter = "1"
