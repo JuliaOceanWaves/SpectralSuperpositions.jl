@@ -1,11 +1,11 @@
-# RepoTemplate.jl
+# SpectralSuperpositions.jl
 
-Tiny placeholder documentation for the RepoTemplate.jl package.
+Tiny placeholder documentation for the SpectralSuperpositions.jl package.
 
 ## Quick Start
 
 ```julia
-using RepoTemplate
+using SpectralSuperpositions
 
 greet()
 greet("Julia")
@@ -14,5 +14,5 @@ greet("Julia")
 ## API
 
 ```@autodocs
-Modules = [RepoTemplate]
+Modules = [SpectralSuperpositions]
 ```

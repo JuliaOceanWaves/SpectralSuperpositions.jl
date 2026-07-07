@@ -1,7 +1,12 @@
-name = "RepoTemplate"
-uuid = "853e458c-f57f-4a7c-9434-3617a48582a4"
+name = "SpectralSuperpositions"
+uuid = "a6b16512-e633-45eb-a565-d7a6d14ef12e"
 authors = ["Sandia National Laboratories"]
 version = "0.1.0"
+
+[deps]
+AxisArrays = "39de3d68-74b9-583c-8d2d-e117c070f3a9"
+DimensionfulAngles = "2d4b8d7a-02d9-40f9-9abe-9c695b77de0d"
+Unitful = "1986cc42-f94f-5a68-af5c-568840ba703d"
 
 [compat]
 julia = "1.10"
