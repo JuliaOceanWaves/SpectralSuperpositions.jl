@@ -4,15 +4,5 @@ Tiny placeholder documentation for the SpectralSuperpositions.jl package.
 
 ## Quick Start
 
-```julia
-using SpectralSuperpositions
+This packages is meant to be used as a foundation for other frequency spectra packages.
 
-greet()
-greet("Julia")
-```
-
-## API
-
-```@autodocs
-Modules = [SpectralSuperpositions]
-```

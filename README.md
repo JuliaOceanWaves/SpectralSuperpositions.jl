@@ -4,10 +4,11 @@
 [![Coverage](https://codecov.io/gh/JuliaOceanWaves/SpectralSuperpositions.jl/branch/main/graph/badge.svg)](https://codecov.io/gh/JuliaOceanWaves/SpectralSuperpositions.jl)
 [![deps](https://platform.juliahub.com/docs/General/SpectralSuperpositions/stable/deps.svg)](https://platform.juliahub.com/ui/Packages/General/SpectralSuperpositions?t=2)
 
-A library of components to use as a foundation for constructing and validating one-dimensional frequency spectra and twodimensional spatial/polar spectra.
+A library of components to use as a foundation for constructing and validating one-dimensional frequency spectra and two-dimensional spatial/polar spectra.
 
 A collection of structs and utilities for building other packages that work with spectral representations. 
-It defines the abstract types for both cases and includes a set of helper functions to validate and classify the axes and data, ensure consistency, and validate spectral variables. Examples include [WaveRealizations.jl](https://github.com/JuliaOceanWaves/WaveRealizations.jl) and [WaveSpectra.jl](https://github.com/JuliaOceanWaves/WaveSpectra.jl) which include workflows for spectral modeling and analysis. 
+It defines the abstract types for both cases and includes a set of helper functions to validate and classify the axes and data, ensure consistency, and validate spectral variables. 
+Examples include [WaveRealizations.jl](https://github.com/JuliaOceanWaves/WaveRealizations.jl) and [WaveSpectra.jl](https://github.com/JuliaOceanWaves/WaveSpectra.jl) which include workflows for spectral modeling and analysis. 
 
 ## Basic Usage
 

@@ -124,6 +124,16 @@ end
 
 superposition_unit_aliases(::AbstractSuperposition1D) = (:superposition,)
 
+"""
+    unit(x::AbstractSuperposition1D, quantity::Symbol)
+    unit(x::AbstractSuperposition1D)
+
+Extend `Unitful.unit` for abstract superposition.
+
+The `quantity` can be `:axis` (or the axis name) or `:integral`.
+These return the units of the spectral-variable axis, integral quantity, or the superposition data quantity.
+The default is `quantity=:superposition`.
+"""
 function unit(x::AbstractSuperposition1D, quantity::Symbol)::Units
     ux, ua = unit(eltype(x)), unit(eltype(x.axis))
     (quantity == :axis) && return ua
@@ -133,6 +143,7 @@ function unit(x::AbstractSuperposition1D, quantity::Symbol)::Units
     throw(ArgumentError("Unknown `quantity`."))
 end
 
+# convert to/from AxisArray
 unit(x::AbstractSuperposition1D) = unit(x, first(superposition_unit_aliases(x)))
 
 function AxisArray(x::AbstractSuperposition1D)

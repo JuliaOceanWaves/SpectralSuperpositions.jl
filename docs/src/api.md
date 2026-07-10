@@ -1,7 +1,7 @@
 # API
 
 ```@autodocs
-Modules = [
-    SpectralSuperpositions
+    Modules=[
+        SpectralSuperpositions
     ]
 ```

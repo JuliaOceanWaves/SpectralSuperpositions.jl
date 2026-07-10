@@ -1,4 +1,7 @@
 using Documenter
+
+using Unitful, DimensionfulAngles, AxisArrays
+
 using SpectralSuperpositions
 
 DocMeta.setdocmeta!(SpectralSuperpositions, :DocTestSetup, :(using SpectralSuperpositions); recursive = true)
@@ -8,6 +11,7 @@ makedocs(
     sitename = "SpectralSuperpositions.jl",
     format = Documenter.HTML(
         prettyurls = get(ENV, "CI", "false") == "true",
+        edit_link = "main",
         assets = String["src/index.css"]
     ),
     modules = [SpectralSuperpositions],
@@ -15,7 +19,7 @@ makedocs(
             "API" => "api.md"]    #plugins = [bib],
 )
 
-deploydocs(
+deploydocs(;
     repo = "github.com/JuliaOceanWaves/SpectralSuperpositions.jl.git",
     versions = ["stable" => "v^", "v#"],
     devbranch = "main",
