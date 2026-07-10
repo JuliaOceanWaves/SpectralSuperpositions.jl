@@ -1,3 +1,13 @@
+"""
+    validate_superposition(
+        data::AbstractMatrix,
+        axis1::AbstractVector{<:Quantity},
+        axis2::AbstractVector{<:Quantity}
+    )
+Recommended validation function for structs that inherit from AbstractSuperposition. Ensures
+type consistency, axis/data sizes, axes values are increasing, moves spectral variables to
+first axis, and saves useful attributes like coordinates, axes_types, and axes_names.
+"""
 function validate_superposition(
     data::AbstractMatrix,
     axis1::AbstractVector{<:Quantity},
@@ -151,6 +161,10 @@ function Base.setindex!(
     return nothing
 end
 
+"""
+    superposition_unit_aliases(::AbstractSuperposition)
+Default symbol for getting the units of the data.
+"""
 superposition_unit_aliases(::AbstractSuperposition) = (:superposition,)
 
 """
